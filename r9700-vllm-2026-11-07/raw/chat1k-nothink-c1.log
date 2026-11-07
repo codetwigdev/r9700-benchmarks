@@ -1,0 +1,77 @@
+[radiance.gemm] no gemm_nt kernel for M<=64 bf16, disabled
+[aiter] import [module_aiter_core] under /opt/vllm/lib/python3.12/site-packages/aiter/jit/module_aiter_core.so
+[radiance.w4] no w4a16 gemm_nt kernel in this r4d build, disabled
+[radiance] preshuffle weight-shuffle-at-load hook installed
+[radiance] attn tuned-config override installed on 2 module aliases
+[radiance] fast-reduce hook armed (RADIANCE_USE_R4D_AR=1, all_reduce wrap)
+[radiance.draft] RADIANCE_DYNAMIC_DRAFT=ON  controller=policy  tau=0.2  schedule=1:8,2:7,4:6,8:5,16:4  (GPU-resident capture + n-gram matcher; per-slot confidence gate short-circuits the forward loop)
+[radiance.gdn] gdn_chunk_scan ENABLED (head_k 128, head_v 128, chunk 64; replaces wy + delta_h + chunk_o)
+[radiance.rmsquant] rms+quant fusion -> radiance op (aiter replacement bypassed)
+[radiance] int2 draft head armed (RADIANCE_FAST_DRAFT)
+[radiance.vit] head_dim-72 attention installed
+[radiance.vit] Gemma4 vision attention installed (head_dim 72)
+Namespace(subparser='bench', bench_type='serve', dispatch_function=<function BenchmarkServingSubcommand.cmd at 0x7cc084501e40>, trust_remote_code=False, seed=42, num_prompts=8, dataset_name='random', no_stream=False, dataset_path=None, no_oversample=False, skip_chat_template=False, enable_multimodal_chat=False, disable_shuffle=False, custom_output_len=256, custom_ensure_client_side_data=False, spec_bench_output_len=256, spec_bench_category=None, sonnet_input_len=550, sonnet_output_len=150, sonnet_prefix_len=200, sharegpt_output_len=None, timed_trace_chunk_hash_size=16, timed_trace_sec_multiplier=1, timed_trace_label_timestamp='timestamp', timed_trace_label_input_length='input_length', timed_trace_label_output_length='output_length', timed_trace_label_hash_ids='hash_ids', blazedit_min_distance=0.0, blazedit_max_distance=1.0, asr_max_audio_len_sec=inf, asr_min_audio_len_sec=0.0, random_input_len=1024, random_output_len=512, random_range_ratio='0', random_prefix_len=0, random_batch_size=1, no_reranker=False, random_mm_base_items_per_request=1, random_mm_num_mm_items_range_ratio=0.0, random_mm_limit_mm_per_prompt={'image': 255, 'video': 1}, random_mm_bucket_config={(256, 256, 1): 0.5, (720, 1280, 1): 0.5, (720, 1280, 16): 0.0}, hf_subset=None, hf_split=None, hf_name=None, hf_output_len=None, bfcl_categories=None, prefix_repetition_prefix_len=256, prefix_repetition_suffix_len=256, prefix_repetition_num_prefixes=10, prefix_repetition_output_len=128, speed_bench_dataset_subset='qualitative', speed_bench_output_len=4096, speed_bench_category=None, label=None, backend='openai-chat', base_url='http://127.0.0.1:8080', host='127.0.0.1', port=8000, endpoint='/v1/chat/completions', header=None, max_concurrency=1, model='Qwen3.8', input_len=None, output_len=None, tokenizer='/models/Qwen3.8-27B-MXFP4-mtpfp8', tokenizer_mode='auto', use_beam_search=False, logprobs=None, request_rate=inf, burstiness=1.0, probe_request_rate=0.0, disable_tqdm=False, num_warmups=1, profile=False, save_result=True, save_detailed=True, append_result=False, metadata=None, result_dir='/tmp/amdbench', result_filename='chat1k-nothink-c1.json', ignore_eos=True, self_timed=None, percentile_metrics='ttft,tpot,itl,e2el', metric_percentiles='50,90,99', goodput=None, request_id_prefix='bench-10c431e2-', top_p=None, top_k=None, min_p=None, temperature=None, frequency_penalty=None, presence_penalty=None, repetition_penalty=None, served_model_name=None, lora_modules=None, lora_assignment='random', ramp_up_strategy=None, ramp_up_start_rps=None, ramp_up_end_rps=None, ready_check_timeout_sec=0, chat_template_kwargs=None, extra_body={'chat_template_kwargs': {'enable_thinking': False}}, skip_tokenizer_init=False, insecure=False, plot_timeline=False, timeline_itl_thresholds='25,50', plot_dataset_stats=False)
+INFO 11-07 17:22:13 [utils.py:90] Sampling input_len from [1024, 1024] and output_len from [512, 512]
+WARNING: vllm bench serve no longer sets temperature==0 (greedy) in requests by default. The default will be determined on the server side and can be model/API specific. For the old behavior, include --temperature=0.
+Starting initial single prompt test run...
+Skipping endpoint ready check.
+Warming up with 1 requests...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:05<00:00,  5.65s/it]100%|██████████| 1/1 [00:05<00:00,  5.65s/it]
+Warmup run completed.
+Starting main benchmark run...
+Traffic request rate: inf
+Burstiness factor: 1.0 (Poisson process)
+Maximum request concurrency: 1
+  0%|          | 0/8 [00:00<?, ?it/s] 12%|█▎        | 1/8 [00:05<00:37,  5.36s/it] 25%|██▌       | 2/8 [00:10<00:30,  5.08s/it] 38%|███▊      | 3/8 [00:15<00:26,  5.25s/it] 50%|█████     | 4/8 [00:21<00:21,  5.45s/it] 62%|██████▎   | 5/8 [00:27<00:17,  5.84s/it] 75%|███████▌  | 6/8 [00:33<00:11,  5.80s/it] 88%|████████▊ | 7/8 [00:38<00:05,  5.55s/it]100%|██████████| 8/8 [00:43<00:00,  5.31s/it]100%|██████████| 8/8 [00:43<00:00,  5.44s/it]
+tip: install termplotlib and gnuplot to plot the metrics
+============ Serving Benchmark Result ============
+Successful requests:                     8         
+Failed requests:                         0         
+Maximum request concurrency:             1         
+Benchmark duration (s):                  43.54     
+Total input tokens:                      8292      
+Total generated tokens:                  4096      
+Request throughput (req/s):              0.18      
+Output token throughput (tok/s):         94.07     
+Peak output token throughput (tok/s):    38.00     
+Peak concurrent requests:                2.00      
+Total token throughput (tok/s):          284.51    
+---------------Time to First Token----------------
+Mean TTFT (ms):                          354.13    
+Median TTFT (ms):                        354.68    
+P50 TTFT (ms):                           354.68    
+P90 TTFT (ms):                           356.49    
+P99 TTFT (ms):                           358.55    
+-----Time per Output Token (excl. 1st token)------
+Mean TPOT (ms):                          9.96      
+Median TPOT (ms):                        9.88      
+P50 TPOT (ms):                           9.88      
+P90 TPOT (ms):                           11.05     
+P99 TPOT (ms):                           12.01     
+---------------Inter-token Latency----------------
+Mean ITL (ms):                           28.27     
+Median ITL (ms):                         26.65     
+P50 ITL (ms):                            26.65     
+P90 ITL (ms):                            27.06     
+P99 ITL (ms):                            53.67     
+----------------End-to-end Latency----------------
+Mean E2EL (ms):                          5442.49   
+Median E2EL (ms):                        5400.43   
+P50 E2EL (ms):                           5400.43   
+P90 E2EL (ms):                           5996.01   
+P99 E2EL (ms):                           6487.42   
+---------------Speculative Decoding---------------
+Acceptance rate (%):                     24.13     
+Acceptance length:                       2.69      
+Drafts:                                  1527      
+Draft tokens:                            10689     
+Accepted tokens:                         2579      
+Per-position acceptance (%):
+  Position 0:                            58.61     
+  Position 1:                            35.43     
+  Position 2:                            25.93     
+  Position 3:                            17.62     
+  Position 4:                            13.03     
+  Position 5:                            9.95      
+  Position 6:                            8.32      
+==================================================

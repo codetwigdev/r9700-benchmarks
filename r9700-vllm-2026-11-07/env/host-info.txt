@@ -1,0 +1,6 @@
+Host: Proxmox VE 9.2.26 (proxmox-ve 9.2.0), kernel 7.0.14-28-pve, in-kernel amdgpu
+CPU: AMD Ryzen 9 7950X 16-Core (32 threads); RAM: 96 GB DDR5 (92 GiB usable)
+Board: ASUS ProArt B850-CREATOR WIFI NEO
+GPUs: 2x Radeon AI PRO R9700 (Navi 48), PCIe LnkSta 32GT/s x16 on both (as reported by lspci)
+Guest: unprivileged LXC, Debian 13, 6 cores, 28 GB RAM, /dev/kfd + render nodes passed through, nesting=1
+Docker 26.1.5 inside the LXC

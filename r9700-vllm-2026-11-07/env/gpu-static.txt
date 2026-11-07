@@ -1,0 +1,143 @@
+ls: cannot access '/opt/rocm-*': No such file or directory
+AMDSMI Tool: 26.5.0+2b22ab01 | AMDSMI Library version: 26.5.0 | ROCm version: 7.14.0 | amdgpu version: N/A | ionic version: N/A
+GPU: 0
+    ASIC:
+        MARKET_NAME: AMD Radeon AI PRO R9700
+        VENDOR_ID: 0x1002
+        VENDOR_NAME: Advanced Micro Devices Inc. [AMD/ATI]
+        SUBVENDOR_ID: 0x1849
+        DEVICE_ID: 0x7551
+        SUBSYSTEM_ID: 0x5413
+        REV_ID: 0xc0
+        ASIC_SERIAL: <removed>
+        OAM_ID: N/A
+        NUM_COMPUTE_UNITS: 64
+        TARGET_GRAPHICS_VERSION: gfx1201
+        FLAGS: 24
+    LIMIT:
+        PPT0:
+            MAX_POWER_LIMIT: 300 W
+            MIN_POWER_LIMIT: 210 W
+            SOCKET_POWER_LIMIT: 210 W
+        PPT1:
+            MAX_POWER_LIMIT: N/A
+            MIN_POWER_LIMIT: N/A
+            SOCKET_POWER_LIMIT: N/A
+        SLOWDOWN_EDGE_TEMPERATURE: 110 °C
+        SLOWDOWN_HOTSPOT_TEMPERATURE: 110 °C
+        SLOWDOWN_VRAM_TEMPERATURE: 108 °C
+        SHUTDOWN_EDGE_TEMPERATURE: 115 °C
+        SHUTDOWN_HOTSPOT_TEMPERATURE: 115 °C
+        SHUTDOWN_VRAM_TEMPERATURE: 113 °C
+        PTL_STATE: N/A
+        PTL_FORMAT: N/A
+    VRAM:
+        TYPE: GDDR6
+        VENDOR: SAMSUNG
+        SIZE: 32624 MB
+        BIT_WIDTH: 256
+        MAX_BANDWIDTH: N/A 
+
+GPU: 1
+    ASIC:
+        MARKET_NAME: AMD Radeon AI PRO R9700
+        VENDOR_ID: 0x1002
+        VENDOR_NAME: Advanced Micro Devices Inc. [AMD/ATI]
+        SUBVENDOR_ID: 0x1849
+        DEVICE_ID: 0x7551
+        SUBSYSTEM_ID: 0x5413
+        REV_ID: 0xc0
+        ASIC_SERIAL: <removed>
+        OAM_ID: N/A
+        NUM_COMPUTE_UNITS: 64
+        TARGET_GRAPHICS_VERSION: gfx1201
+        FLAGS: 24
+    LIMIT:
+        PPT0:
+            MAX_POWER_LIMIT: 300 W
+            MIN_POWER_LIMIT: 210 W
+            SOCKET_POWER_LIMIT: 210 W
+        PPT1:
+            MAX_POWER_LIMIT: N/A
+            MIN_POWER_LIMIT: N/A
+            SOCKET_POWER_LIMIT: N/A
+        SLOWDOWN_EDGE_TEMPERATURE: 110 °C
+        SLOWDOWN_HOTSPOT_TEMPERATURE: 110 °C
+        SLOWDOWN_VRAM_TEMPERATURE: 108 °C
+        SHUTDOWN_EDGE_TEMPERATURE: 115 °C
+        SHUTDOWN_HOTSPOT_TEMPERATURE: 115 °C
+        SHUTDOWN_VRAM_TEMPERATURE: 113 °C
+        PTL_STATE: N/A
+        PTL_FORMAT: N/A
+    VRAM:
+        TYPE: GDDR6
+        VENDOR: SAMSUNG
+        SIZE: 32624 MB
+        BIT_WIDTH: 256
+        MAX_BANDWIDTH: N/A 
+
+GPU: 2
+    ASIC:
+        MARKET_NAME: AMD Radeon Graphics
+        VENDOR_ID: 0x1002
+
+
+============================ ROCm System Management Interface ============================
+====================================== Temperature =======================================
+GPU[0]		: Temperature (Sensor edge) (C): 29.0
+GPU[0]		: Temperature (Sensor junction) (C): 29.0
+GPU[0]		: Temperature (Sensor memory) (C): 30.0
+GPU[1]		: Temperature (Sensor edge) (C): 29.0
+GPU[1]		: Temperature (Sensor junction) (C): 30.0
+GPU[1]		: Temperature (Sensor memory) (C): 30.0
+GPU[2]		: Temperature (Sensor edge) (C): 40.0
+==========================================================================================
+======================================= Power Cap ========================================
+GPU[0]		: Max Graphics Package Power (W): 210.0
+GPU[1]		: Max Graphics Package Power (W): 210.0
+GPU[2]		: get_power_cap, Not supported on the given system
+GPU[2]		: Max Graphics Package Power Unsupported
+==========================================================================================
+=================================== Power Consumption ====================================
+GPU[0]		: Average Graphics Package Power (W): 18.0
+GPU[1]		: Average Graphics Package Power (W): 20.0
+GPU[2]		: Current Socket Graphics Package Power (W): 1.64
+==========================================================================================
+================================== Memory Usage (Bytes) ==================================
+GPU[0]		: VRAM Total Memory (B): 34208743424
+GPU[0]		: VRAM Total Used Memory (B): 33860886528
+GPU[1]		: VRAM Total Memory (B): 34208743424
+GPU[1]		: VRAM Total Used Memory (B): 33860927488
+GPU[2]		: VRAM Total Memory (B): 536870912
+GPU[2]		: VRAM Total Used Memory (B): 16842752
+==========================================================================================
+====================================== Product Info ======================================
+GPU[0]		: Card Series: 		AMD Radeon AI PRO R9700
+GPU[0]		: Card Model: 		0x7551
+GPU[0]		: Card Vendor: 		0x1002
+GPU[0]		: Card SKU: 		APM107573
+GPU[0]		: Subsystem ID: 	0x5413
+GPU[0]		: Device Rev: 		0xc0
+GPU[0]		: Node ID: 		1
+GPU[0]		: GUID: 		<removed>
+GPU[0]		: GFX Version: 		gfx1201
+GPU[1]		: Card Series: 		AMD Radeon AI PRO R9700
+GPU[1]		: Card Model: 		0x7551
+GPU[1]		: Card Vendor: 		0x1002
+GPU[1]		: Card SKU: 		APM107573
+GPU[1]		: Subsystem ID: 	0x5413
+GPU[1]		: Device Rev: 		0xc0
+GPU[1]		: Node ID: 		2
+GPU[1]		: GUID: 		<removed>
+GPU[1]		: GFX Version: 		gfx1201
+GPU[2]		: Card Series: 		AMD Radeon Graphics
+GPU[2]		: Card Model: 		0x164e
+GPU[2]		: Card Vendor: 		0x1002
+GPU[2]		: Card SKU: 		RAPHAEL
+GPU[2]		: Subsystem ID: 	-0x7789
+GPU[2]		: Device Rev: 		0xc1
+GPU[2]		: Node ID: 		3
+GPU[2]		: GUID: 		<removed>
+GPU[2]		: GFX Version: 		gfx1036
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
